@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <header class="cube-bar">
+    <header class="cube-bar" v-if="$route.path !== '/test'">
       <h1>cube-ui</h1>
     </header>
-    <section class="cube-content" ref="mfct">
+    <section class="cube-content" ref="mfct" v-if="$route.path !== '/test'">
       <cube-index-list :data="components" class="cube-list">
         <cube-index-list-group v-for="(group, index) in components" :key="index" :group="group">
           <cube-index-list-item v-for="(component, index) in group.items" :key="index" :item="component">
